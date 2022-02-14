@@ -1,23 +1,16 @@
-# Copyright 2022 Felipe
-# See LICENSE file for licensing details.
-
-# For a complete list of supported options, see:
-# https://juju.is/docs/sdk/metadata-reference
 name: openidc-test-fixture
 display-name: |
-  TEMPLATE-TODO: fill out a display name for the Charmcraft store
+  OpenID Connect Test Fixture
 description: |
-  TEMPLATE-TODO: fill out the charm's description
+  This charm deploys a basic OpenID Connect provider with a set of predefined users.
 summary: |
-  TEMPLATE-TODO: fill out the charm's summary
+  OpenID Connect provider fixture for testing.
 
-# TEMPLATE-TODO: replace with containers for your workload (delete for non-k8s)
-containers:
-  httpbin:
-    resource: httpbin-image
+series:
+  - focal
 
-# TEMPLATE-TODO: each container defined above must specify an oci-image resource
 resources:
-  httpbin-image:
-    type: oci-image
-    description: OCI image for httpbin (kennethreitz/httpbin)
+  openidc-test-ipsilon:
+    type: file
+    filename: openidc-test-ipsilon.snap
+    description: The openidc-test-ipsilon snap.
